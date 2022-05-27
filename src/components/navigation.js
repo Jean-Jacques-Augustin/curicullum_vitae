@@ -1,4 +1,4 @@
-import { AppBar, Container, Toolbar, Typography } from "@mui/material";
+import { AppBar, Toolbar, Typography } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
 import "../styles/main.css";
@@ -12,12 +12,13 @@ export const nav_styles = [
 
 export default function Navigation() {
      return (
-          <AppBar color="inherit" variant="elevation">
+          <AppBar color="inherit" variant="elevation" elevation={1}>
                <Toolbar className="toolbar_menu">
-                    <Typography variant="h4">Feno</Typography>
+                    <Typography variant="h4">Jean Jacques Augustin</Typography>
                     <div className="links_style">
                          {nav_styles.map((item, key) => (
                               <Link
+                                   className="liens"
                                    component={Typography}
                                    variant="h5"
                                    key={key}
