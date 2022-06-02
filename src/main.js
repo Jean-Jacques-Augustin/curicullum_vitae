@@ -7,10 +7,7 @@ export default function Main() {
      return (
           <div>
                <Navigation />
-               <Toolbar />
-               <Container>
-                    <About />
-               </Container>
+               <About />
           </div>
      );
 }
