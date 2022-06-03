@@ -21,24 +21,28 @@ export default function About() {
      return (
           <div className="div_parent_about">
                <Container sx={{ justifyContent: "center" }}>
-                    <Paper className="card_about">
-                         <Typography variant="h6">Bonjour,</Typography>
-                         <Toolbar />
-                         <div className="about">
-                              <div className="images_avatar">Images</div>
-                              <div className="about_infirmation">
-                                   <Typography variant="body1">
-                                        Bonjour, je m'appelle
-                                   </Typography>
-                                   <Typography variant="h5">{name}</Typography>
-                                   <Typography variant="body2">
-                                        Je suis un dévellopeur web
-                                   </Typography>
-                                   <CusstomButton />
+                    <div className="div_parent_papper">
+                         <Paper className="card_about">
+                              <Typography variant="h6">Bonjour,</Typography>
+                              <Toolbar />
+                              <div className="about">
+                                   <div className="images_avatar">Images</div>
+                                   <div className="about_infirmation">
+                                        <Typography variant="body1">
+                                             Bonjour, je m'appelle
+                                        </Typography>
+                                        <Typography variant="h5">
+                                             {name}
+                                        </Typography>
+                                        <Typography variant="body2">
+                                             Je suis un dévellopeur web
+                                        </Typography>
+                                        <CusstomButton />
+                                   </div>
                               </div>
-                         </div>
-                         <Toolbar />
-                    </Paper>
+                              <Toolbar />
+                         </Paper>
+                    </div>
                </Container>
           </div>
      );

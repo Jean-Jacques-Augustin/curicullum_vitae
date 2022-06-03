@@ -66,7 +66,11 @@
 }
 
 .div_parent_about {
-     background-color: #512da8;
+     background-color: #002984;
+}
+
+.div_parent_papper {
+     border: 2px solid red;
      min-height: 100vh;
      display: flex;
      justify-content: center;

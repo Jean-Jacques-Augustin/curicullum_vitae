@@ -1,8 +1,9 @@
-import { AppBar, Button, Toolbar, Typography } from "@mui/material";
+import React, { useState } from "react";
+import { AppBar, Button, IconButton, Toolbar, Typography } from "@mui/material";
 import { Container } from "@mui/system";
-import React from "react";
-import { Link } from "react-router-dom";
 import { name } from "../constantes";
+import DarkModeIcon from "@mui/icons-material/DarkMode";
+import LightModeIcon from "@mui/icons-material/LightMode";
 import "../styles/main.css";
 
 export const nav_styles = [
@@ -12,17 +13,23 @@ export const nav_styles = [
 ];
 
 export default function Navigation() {
+     const [dark, setDark] = useState("false");
+
+     const changementMode = (e) => {
+          setDark(!dark);
+     };
+
      return (
-          <AppBar color="transparent" variant="elevation" elevation={1}>
+          <AppBar color="primary" variant="elevation" elevation={1}>
                <Container>
                     <Toolbar className="toolbar_menu">
-                         <Typography variant="h5">{name}</Typography>
+                         <Typography color={"inherit"} variant="h5">
+                              {name}
+                         </Typography>
 
-                         <Button
-                              variant="outlined"
-                              style={{ textTransform: "none" }}>
-                              Télécharger mon CV
-                         </Button>
+                         <IconButton color={"inherit"} onClick={changementMode}>
+                              {dark ? <DarkModeIcon /> : <LightModeIcon />}
+                         </IconButton>
                     </Toolbar>
                </Container>
           </AppBar>
