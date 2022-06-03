@@ -63,6 +63,7 @@
 
 .card_about {
      margin: auto;
+     min-width: 100%;
 }
 
 .div_parent_about {
@@ -70,7 +71,6 @@
 }
 
 .div_parent_papper {
-     border: 2px solid red;
      min-height: 100vh;
      display: flex;
      justify-content: center;
