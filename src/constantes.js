@@ -1,9 +1,11 @@
-import Feminin_theme_light from "./themes/feminin";
-import Masculin_theme_light from "./themes/masculin";
+import Feminin_theme_light from "./themes/dark";
+import Masculin_theme_light from "./themes/light";
 
 export const name = "Jean Jacques Augustin";
 export const imageUrl = "";
 
-let sexe = false;
+const theme_mode = true;
 
-export const theme_Light = sexe ? Masculin_theme_light : Feminin_theme_light;
+export const theme_Light = theme_mode
+     ? Masculin_theme_light
+     : Feminin_theme_light;

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { AppBar, Button, IconButton, Toolbar, Typography } from "@mui/material";
+import { AppBar, IconButton, Toolbar, Typography } from "@mui/material";
 import { Container } from "@mui/system";
 import { name } from "../constantes";
 import DarkModeIcon from "@mui/icons-material/DarkMode";

@@ -2,38 +2,12 @@
      font-size: large;
 }
 
-.links_style {
-     display: flex;
-     justify-content: center;
-     align-content: center;
-     padding: 0;
-     margin: 0;
-}
-
 .toolbar_menu {
      display: "flex";
      flex-direction: row;
      align-content: center;
      justify-content: space-between;
      flex-wrap: nowrap;
-}
-
-.liens {
-     color: inherit;
-     display: block;
-     text-align: center;
-     padding: 20px 16px;
-     text-decoration: none;
-     color: inherit;
-     margin-left: 1vh;
-}
-
-.liens:hover {
-     border-bottom: 5px solid #512da8;
-}
-
-.liens:active {
-     border-bottom: 5px solid #512da8;
 }
 
 .custom_button {
@@ -43,10 +17,11 @@
 }
 
 .images_avatar {
-     background-color: #512da8;
      border-radius: 50%;
      height: 40vh;
      width: 40vh;
+     object-fit: cover;
+     opacity: 0.7;
 }
 
 .about {
@@ -75,4 +50,33 @@
      display: flex;
      justify-content: center;
      align-content: center;
+}
+
+.navigation_bar {
+     position: absolute;
+     top: auto;
+     bottom: 10px;
+     border-radius: 10px !important;
+}
+
+.navigation_div {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+
+/*!Navigation*/
+
+.navlink_md {
+     align-items: center;
+     flex-direction: column;
+     color: inherit;
+     display: flex;
+     text-align: center;
+     padding: 10px 20px;
+     text-decoration: none;
+}
+
+.navlink_md:hover {
+     color: inherit;
 }

@@ -1,14 +1,15 @@
 import { createTheme } from "@mui/material/styles";
 
-const Feminin_theme_light = createTheme({
+const Theme_light = createTheme({
      palette: {
+          mode: "light",
           primary: {
-               main: "#3949ab",
+               main: "#0052cc",
           },
           secondary: {
-               main: "#d32f2f",
+               main: "#edf2ff",
           },
      },
 });
 
-export default Feminin_theme_light;
+export default Theme_light;

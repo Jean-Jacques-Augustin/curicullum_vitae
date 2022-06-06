@@ -1,14 +1,15 @@
 import { createTheme } from "@mui/material/styles";
 
-const Masculin_theme_light = createTheme({
+const Theme_light = createTheme({
      palette: {
+          mode: "dark",
           primary: {
-               main: "#0052cc",
+               main: "#3949ab",
           },
           secondary: {
-               main: "#edf2ff",
+               main: "#d32f2f",
           },
      },
 });
 
-export default Masculin_theme_light;
+export default Theme_light;
