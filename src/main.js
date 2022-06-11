@@ -1,6 +1,11 @@
-import { ButtonGroup, Paper, Typography } from "@mui/material";
+import {
+     BottomNavigation,
+     BottomNavigationAction,
+     Hidden,
+     Paper,
+} from "@mui/material";
 import React from "react";
-import { NavLink, Routes, Route } from "react-router-dom";
+import { NavLink, Routes, Route, Link } from "react-router-dom";
 import Navigation from "./components/navigation";
 import About from "./pages/about";
 import Contact from "./pages/contact";
@@ -9,47 +14,78 @@ import Formation from "./pages/formation";
 /**
  * Icons
  */
-import WorkOutlineOutlinedIcon from "@mui/icons-material/WorkOutlineOutlined";
-import ContactMailOutlinedIcon from "@mui/icons-material/ContactMailOutlined";
-import SchoolOutlinedIcon from "@mui/icons-material/SchoolOutlined";
-import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
+import WorkRoundedIcon from "@mui/icons-material/WorkRounded";
+import ContactPageRoundedIcon from "@mui/icons-material/ContactPageRounded";
+import SchoolRoundedIcon from "@mui/icons-material/SchoolRounded";
+import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
 
 const Item_navigation_list = [
-     { name: "A propos", path: "/", icon: <HomeOutlinedIcon /> },
-     { name: "Formation", path: "/formation", icon: <SchoolOutlinedIcon /> },
+     { name: "A propos", path: "/", icon: <HomeRoundedIcon /> },
+     { name: "Formation", path: "/formation", icon: <SchoolRoundedIcon /> },
      {
           name: "Experience",
           path: "/experience",
-          icon: <WorkOutlineOutlinedIcon />,
+          icon: <WorkRoundedIcon />,
      },
-     { name: "Contact", path: "/contact", icon: <ContactMailOutlinedIcon /> },
+     { name: "Contact", path: "/contact", icon: <ContactPageRoundedIcon /> },
 ];
 
-const Navigation_button_custom = () => {
+const Bottom_navigation_control = () => {
+     const [value, setValue] = React.useState(0);
      return (
           <div className="navigation_div">
-               <Paper className="navigation_bar">
-                    <ButtonGroup
-                         size="large"
-                         sx={{ m: 0, p: 0 }}
-                         aria-label="large button group">
+               <Paper
+                    sx={{
+                         position: "fixed",
+                         width: 500,
+                         bottom: 20,
+                    }}
+                    className={"papper_navigation_parent"}
+                    elevation={3}>
+                    <BottomNavigation
+                         className={"papper_navigation"}
+                         showLabels
+                         value={value}
+                         onChange={(event, newValue) => {
+                              setValue(newValue);
+                         }}>
                          {Item_navigation_list.map((item, key) => (
-                              <NavLink
-                                   color="primary"
+                              <BottomNavigationAction
+                                   component={Link}
                                    key={key}
+                                   label={item.name}
+                                   icon={item.icon}
                                    to={item.path}
-                                   className="navlink_md">
-                                   {item.icon}
-                                   <Typography
-                                        variant="subtitle1"
-                                        color={"inherit"}>
-                                        {item.name}
-                                   </Typography>
-                              </NavLink>
+                              />
                          ))}
-                    </ButtonGroup>
+                    </BottomNavigation>
                </Paper>
           </div>
+     );
+};
+
+const MobileNavigation = () => {
+     const [value, setValue] = React.useState(0);
+     return (
+          <Paper
+               sx={{ position: "fixed", bottom: 0, left: 0, right: 0 }}
+               elevation={3}>
+               <BottomNavigation
+                    value={value}
+                    onChange={(event, newValue) => {
+                         setValue(newValue);
+                    }}>
+                    {Item_navigation_list.map((item, key) => (
+                         <BottomNavigationAction
+                              component={Link}
+                              key={key}
+                              label={item.name}
+                              icon={item.icon}
+                              to={item.path}
+                         />
+                    ))}
+               </BottomNavigation>
+          </Paper>
      );
 };
 
@@ -63,7 +99,12 @@ export default function Main() {
                     <Route path="/experience" element={<Experience />} />
                     <Route path="/contact" element={<Contact />} />
                </Routes>
-               {Navigation_button_custom()}
+               <Hidden smDown>
+                    <Bottom_navigation_control />
+               </Hidden>
+               <Hidden smUp>
+                    <MobileNavigation />
+               </Hidden>
           </div>
      );
 }

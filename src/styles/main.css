@@ -26,6 +26,7 @@
 
 .about {
      display: flex;
+     flex-direction: column;
      justify-content: space-evenly;
 }
 
@@ -47,6 +48,7 @@
 
 .div_parent_papper {
      min-height: 100vh;
+
      display: flex;
      justify-content: center;
      align-content: center;
@@ -65,18 +67,28 @@
      align-items: center;
 }
 
-/*!Navigation*/
-
-.navlink_md {
-     align-items: center;
-     flex-direction: column;
+.lien_contact {
      color: inherit;
-     display: flex;
-     text-align: center;
-     padding: 10px 20px;
      text-decoration: none;
 }
 
-.navlink_md:hover {
+.form_typo_icon {
+     display: flex;
+     align-items: center;
+     margin-bottom: 2vh;
+}
+
+.form_typo_icon svg {
+     margin-right: 15px;
+     font-size: 2rem;
      color: inherit;
+}
+
+/*!Navigation*/
+.papper_navigation {
+     border-radius: 15px !important;
+}
+
+.papper_navigation_parent {
+     border-radius: 10px !important;
 }

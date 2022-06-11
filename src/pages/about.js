@@ -1,4 +1,11 @@
-import { Button, Grid, Paper, Toolbar, Typography } from "@mui/material";
+import {
+     Button,
+     Grid,
+     Hidden,
+     Paper,
+     Toolbar,
+     Typography,
+} from "@mui/material";
 import { Container } from "@mui/system";
 import React from "react";
 import { name } from "../constantes";
@@ -11,14 +18,23 @@ export default function About() {
           <div>
                <div className="div_parent_about">
                     <Container sx={{ justifyContent: "center" }}>
+                         <Hidden smUp>
+                              <Toolbar />
+                         </Hidden>
                          <div className="div_parent_papper">
-                              <Paper className="card_about">
-                                   <Toolbar />
+                              <Paper className="card_about" variant="outlined">
                                    <div className="about">
+                                        <div style={{ margin: "2vh" }}>
+                                             <Typography variant="h4">
+                                                  Bienvenue,
+                                             </Typography>
+                                        </div>
                                         <Grid
                                              container
                                              direction="row"
                                              justifyContent="space-around"
+                                             spacing={2}
+                                             padding={2}
                                              alignItems="center">
                                              <Grid item>
                                                   <img
@@ -27,6 +43,7 @@ export default function About() {
                                                        alt={"Sary"}
                                                   />
                                              </Grid>
+
                                              <Grid item>
                                                   <div className="about_infirmation">
                                                        <Typography variant="h4">
@@ -55,9 +72,11 @@ export default function About() {
                                              </Grid>
                                         </Grid>
                                    </div>
-                                   <Toolbar />
                               </Paper>
                          </div>
+                         <Hidden smUp>
+                              <Toolbar />
+                         </Hidden>
                     </Container>
                </div>
           </div>
