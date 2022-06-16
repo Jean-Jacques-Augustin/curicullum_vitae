@@ -20,7 +20,7 @@ export default function Navigation() {
      };
 
      return (
-          <AppBar color="primary" variant="elevation" elevation={1}>
+          <AppBar color="inherit" variant="elevation" elevation={1}>
                <Container>
                     <Toolbar className="toolbar_menu">
                          <Typography color={"inherit"} variant="h5">

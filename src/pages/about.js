@@ -22,7 +22,7 @@ export default function About() {
                               <Toolbar />
                          </Hidden>
                          <div className="div_parent_papper">
-                              <Paper className="card_about" variant="outlined">
+                              <Paper className="card_about" variant="elevation">
                                    <div className="about">
                                         <div style={{ margin: "2vh" }}>
                                              <Typography variant="h4">
